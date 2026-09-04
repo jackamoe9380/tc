@@ -112,7 +112,7 @@ function slots(theme='crimson7s'){
 function poker(){
  body.innerHTML=`<div class="game-stage poker-stage"><div class="poker-table"><div class="poker-seat opponent"><span>HOUSE</span><div id="aiCards" class="poker-cards"></div><strong id="aiScore">Waiting</strong></div><div class="community"><div class="hand-title" id="pokerStreet">READY</div><div id="communityCards" class="poker-cards"></div><div class="pot-line">POT <b id="pot">$0.00</b></div></div><div class="poker-seat player"><span>YOU</span><div id="yourCards" class="poker-cards"></div><strong id="yourScore">Waiting</strong></div></div><div class="message" id="pokerMsg">Place a bet to deal a heads-up hand.</div><div class="bet-bar"><input class="bet-input" id="pbet" type="number" value="100" min="1"><button class="mini-btn red" id="pdeal">DEAL</button><button class="mini-btn" id="pcheck" disabled>CHECK</button><button class="mini-btn" id="pcall" disabled>CALL</button><button class="mini-btn" id="praise" disabled>RAISE +</button><button class="mini-btn" id="pfold" disabled>FOLD</button></div><div class="poker-note">Heads-up Hold'em-style poker. Raise adds to the pot and the house responds asynchronously.</div></div>`;
  let deck=[],hole=[],aiHole=[],community=[],baseBet=0,pot=0,committed=0,street=0,active=false,thinking=false,timers=[],token=gameSession;
- const ranks=['2','3','4','5','6','7','8','9','T','J','Q','K','A'],suits=['♠','♥','♦','♣'];
+ const ranks=['2','3','4','5','6','7','8','9','10','J','Q','K','A'],suits=['♠','♥','♦','♣'];
  const red=s=>'♥♦'.includes(s);
  function makeDeck(){const a=[];for(const su of suits)for(const r of ranks)a.push({r,s:su});return a.sort(()=>Math.random()-.5)}
  const draw=()=>deck.pop();
